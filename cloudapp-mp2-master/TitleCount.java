@@ -88,7 +88,7 @@ public class TitleCount extends Configured implements Tool {
             StringTokenizer tokenizer = new StringTokenizer(line, delimiters);
             while (tokenizer.hasMoreTokens()) {
                 String nextToken = tokenizer.nextToken();
-                if (!stopWords.contain(nextToken.trim().toLowerCase())) {
+                if (!stopWords.contains(nextToken.trim().toLowerCase())) {
                     context.write(new Text(nextToken), new IntWritable(1));
                 }
             }
